@@ -17,3 +17,15 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test.only('test',async({page})=>{
+    
+    await page.goto('https://www.demoblaze.com/')
+    //Login
+     await page.click('#login2')
+     await page.fill('#loginusername','admin')
+     await page.fill('#loginpassword','admin')
+     await page.click('//button[normalize-space()="Log in"]')
+     await expect(page.locator('#logout2')).toBeVisible()
+      await page.waitForTimeout(2000); // 2 seconds
+})
